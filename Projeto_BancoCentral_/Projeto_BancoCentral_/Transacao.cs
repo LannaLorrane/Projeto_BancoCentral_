@@ -3,27 +3,56 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static Projeto_BancoCentral_.Transacao;
 
 namespace Projeto_BancoCentral_
 {
     internal class Transacao
     {
-        public decimal Valor { get; set; }
-        public DateTime Data { get; set; }
-        public string Tipo { get; set; }
-        public ContaBancaria ContaOrigem { get; set; }
-        public ContaBancaria ContaDestino { get; set; }
-        //rr
-        private decimal _valor;
-        public decimal valor
+        public class transacao
         {
-            get { return _valor; }
-            set
+            protected decimal _valor;
+
+            public decimal Valor
             {
-                if (value > 0)
-                    _valor = value;
-                else
-                    Console.WriteLine("Erro: o valor da transaçãodeve ser positivo");
+                get { return _valor; }
+                set { if (value > 0) _valor = value; }
+            }
+
+            public DateTime Data { get; set; } = DateTime.Now;
+            public string ContaOrigem { get; set; }
+            public string ContaDestino { get; set; }
+
+            public virtual bool Validar()
+            {
+                return _valor > 0;
+            }
+        }
+
+        public class TransacaoPix : transacao
+        {
+            public string ChavePix { get; set; }
+
+            public override bool Validar()
+            {
+                return _valor > 0 && _valor <= 10000;
+            }
+        }
+
+        public class transacaoTed : transacao
+        {
+            public override bool Validar()
+            {
+                return _valor > 500;
+            }
+        }
+
+        public class Transacaoted : transacao
+        {
+            public override bool Validar()
+            {
+                //Regra de exemplo: TED deve ser maior que R$5.000 para fiscalização
+                return _valor > 5000;
             }
         }
     }
