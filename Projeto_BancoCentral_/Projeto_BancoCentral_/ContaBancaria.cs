@@ -8,5 +8,9 @@ namespace Projeto_BancoCentral_
 {
     internal class ContaBancaria
     {
+        public string Agencia { get; set; }
+        public string NumeroConta { get; set; }
+        public decimal Saldo { get; private set; }
+
     }
 }
