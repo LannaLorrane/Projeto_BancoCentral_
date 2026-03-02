@@ -1,6 +1,6 @@
-﻿using static BancoCentralAtual.Transacao;
+﻿using static Projeto_BancoCentral_.Transacao;
 using System;
-using BancoCentralAtual;
+using Projeto_BancoCentral_;
 
 class Program
 {
@@ -15,6 +15,9 @@ class Program
 
         Console.WriteLine($"Pix de R$ {meuPix.Valor} é válido? {meuPix.Validar()}");
         Console.WriteLine($"TED de R$ {meuTed.Valor} é válido? {meuTed.Validar()}");
+
+        Console.WriteLine("\nRelatório em Milhoes:");
+        ExibirRelatorio(meuPix.Valor, new ConversorMilhoes());
 
         Console.WriteLine("\nRelatório em Bilhões:");
         ExibirRelatorio(meuPix.Valor, new ConversorBilhoes());

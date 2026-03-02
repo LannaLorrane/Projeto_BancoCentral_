@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using static BancoCentralAtual.Transacao;
+using static Projeto_BancoCentral_.Transacao;
 
-namespace BancoCentralAtual
+namespace Projeto_BancoCentral_
 {
     internal class TransacaoTed : Transacao
     {
@@ -13,7 +13,7 @@ namespace BancoCentralAtual
 
         public override bool Validar()
         {
-            return _valor > 5000;
+            return _valor > 0;
         }
     }
 }

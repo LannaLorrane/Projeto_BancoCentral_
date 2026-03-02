@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using static BancoCentralAtual.Transacao;
-namespace BancoCentralAtual
+using static Projeto_BancoCentral_.Transacao;
+namespace Projeto_BancoCentral_
 {
     internal class Transacao
     {

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BancoCentralAtual
+namespace Projeto_BancoCentral_
 {
     internal class PessoaFisica : Cliente
     {
