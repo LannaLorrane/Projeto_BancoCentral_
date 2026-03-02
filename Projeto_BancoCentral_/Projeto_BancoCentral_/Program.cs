@@ -29,5 +29,5 @@ class Program
     {
         decimal valorConvertido = conversor.Converter(valorBruto);
         Console.WriteLine($"Valor convertido: {valorConvertido:N2} {conversor.ObterSimbolo()}");
-    }//teste
+    }//teste//teste
 }
